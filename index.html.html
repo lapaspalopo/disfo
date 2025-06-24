@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Informasi Lapas Palopo</title>
+  <link rel="icon" href="https://i.ibb.co/Yk9ZtLw/favicon32.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    :root {
+      --primary: #0910e683;
+      --secondary: #f5f5f5;
+      --text-light: white;
+      --highlight: #4e5357;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: transparent;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: url('https://drive.google.com/uc?export=view&id=1z5XIk5pvm_7f-7Xzz4OKFr1d8N1wfHx_') no-repeat center center / cover;
+      filter: brightness(0.85);
+      background-attachment: fixed;
+    }
+
+    header {
+      background: var(--primary);
+      color: var(--text-light);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-title img {
+      max-height: 50px;
+    }
+
+    .time-box {
+      text-align: right;
+    }
+
+    .tanggal {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .jam {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    .judul-menu {
+      font-size: 2.2rem;
+      color: #003366;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .info-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .box, .pengumuman-box {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1rem;
+      width: 250px;
+      min-height: 120px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .box:hover, .media-box:hover {
+      transform: scale(1.05);
+    }
+
+    .pengumuman-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pengumuman-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: red;
+    }
+
+    .pengumuman-box {
+      overflow: hidden;
+      position: relative;
+      height: 150px;
+    }
+
+    .pengumuman-box p {
+      position: absolute;
+      width: 100%;
+      animation: scroll-up 12s linear infinite;
+      margin: 0;
+    }
+
+    @keyframes scroll-up {
+      0% { top: 100%; }
+      100% { top: -100%; }
+    }
+
+    .media-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem auto;
+    }
+
+    .media-box {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 560px;
+      width: 100%;
+      transition: transform 0.3s;
+    }
+
+    .slider {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 250px;
+      border-radius: 10px;
+    }
+
+    .slide-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      animation: slideAnim 20s infinite linear;
+    }
+
+    .slide-track img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    @keyframes slideAnim {
+      0%   { transform: translateX(0%); }
+      20%  { transform: translateX(0%); }
+      25%  { transform: translateX(-100%); }
+      45%  { transform: translateX(-100%); }
+      50%  { transform: translateX(-200%); }
+      70%  { transform: translateX(-200%); }
+      75%  { transform: translateX(-300%); }
+      95%  { transform: translateX(-300%); }
+      100% { transform: translateX(0%); }
+    }
+
+    .video-container iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .running-text-wrapper {
+      background: var(--highlight);
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 1rem 0;
+    }
+
+    .running-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    footer {
+      background: var(--primary);
+      color: var(--text-light);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .logo-title {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .info-container, .media-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="animate__animated animate__fadeInDown">
+    <div class="logo-title">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Logo_Kementrian_Imigrasi_dan_Pemasyarakatan_%282024%29.png" alt="Logo Kemenkumham" />
+      <h1>Lapas Kelas IIA Palopo</h1>
+    </div>
+    <div class="time-box">
+      <div class="tanggal" id="tanggal">Hari, Tanggal</div>
+      <div class="jam" id="jam">00:00:00</div>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="judul-menu animate__animated animate__zoomIn">MENU MAKAN WARGA BINAAN LAPAS PALOPO</h2>
+    <div class="info-container">
+      <div class="box animate__animated animate__fadeInUp"><h3>Pagi</h3><p id="menuPagi">...</p></div>
+      <div class="box animate__animated animate__fadeInUp"><h3>Siang</h3><p id="menuSiang">...</p></div>
+      <div class="box animate__animated animate__fadeInUp"><h3>Malam</h3><p id="menuMalam">...</p></div>
+      <div class="pengumuman-wrapper animate__animated animate__fadeInUp">
+        <div class="pengumuman-title">PENGUMUMAN</div>
+        <div class="pengumuman-box"><p id="pengumumanText">Memuat pengumuman...</p></div>
+      </div>
+    </div>
+
+    <div class="media-container">
+      <div class="media-box animate__animated animate__zoomIn">
+        <h2>Video Profil</h2>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/hNCrgpbxTdw?si=cZn6uc5-E8J6ou7V" title="Profil Lapas"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="media-box animate__animated animate__zoomIn">
+        <h2>Galeri Foto</h2>
+        <div class="slider">
+          <div class="slide-track" id="galeriFoto">
+            <!-- Gambar diisi oleh JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="running-text-wrapper animate__animated animate__fadeInUp">
+    <div class="running-text" id="runningText">Memuat informasi...</div>
+  </div>
+
+  <footer class="animate__animated animate__fadeInUp">
+    &copy; 2025 Lapas Kelas IIA Palopo
+  </footer>
+
+  <script>
+    const updateTime = () => {
+      const now = new Date();
+      const hari = now.toLocaleDateString('id-ID', { weekday: 'long' });
+      const tanggal = now.toLocaleDateString('id-ID', {
+        year: 'numeric', month: 'long', day: 'numeric'
+      });
+      const jam = now.toLocaleTimeString('id-ID', { hour12: false });
+      document.getElementById('tanggal').textContent = `${hari}, ${tanggal}`;
+      document.getElementById('jam').textContent = jam;
+    };
+    setInterval(updateTime, 1000); updateTime();
+
+    (async () => {
+      try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbxIbUDGwdB1GMEcmokX4Ra6piT0-yBxh_52vwjrO3hp1_La7cSgYXmG47nvL9pJwqvn/exec");
+        const data = await response.json();
+        document.getElementById("menuPagi").textContent = data.menu?.pagi || "Belum tersedia";
+        document.getElementById("menuSiang").textContent = data.menu?.siang || "Belum tersedia";
+        document.getElementById("menuMalam").textContent = data.menu?.malam || "Belum tersedia";
+        document.getElementById("runningText").textContent = data.running_text || "Tidak ada informasi saat ini.";
+        document.getElementById("pengumumanText").textContent = data.pengumuman || "Tidak ada pengumuman saat ini.";
+
+        const galeri = document.getElementById("galeriFoto");
+        if (Array.isArray(data.galeri)) {
+          data.galeri.forEach(url => {
+            const img = document.createElement("img");
+            img.src = url;
+            img.alt = "Foto Kegiatan";
+            galeri.appendChild(img);
+          });
+        }
+      } catch (error) {
+        console.error("Gagal mengambil data:", error);
+        document.getElementById("runningText").textContent = "Gagal memuat data.";
+      }
+    })();
+  </script>
+</body>
+</html>
